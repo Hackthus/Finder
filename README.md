@@ -25,7 +25,8 @@ A modular Python CLI tool for passive/active reconnaissance on a target domain.
 
 ```bash
 # 1. Clone / unzip the project
-cd osint_tool
+git clone https://github.com/Hackthus/Finder.git
+cd Finder
 
 # 2. (Recommended) Create a virtual environment
 python3 -m venv .venv
@@ -41,24 +42,24 @@ pip install -r requirements.txt
 
 ```bash
 # Full scan (emails + subdomains + social)
-python main.py -d example.com
+python finder.py -d example.com
 
 # Run only one module
-python main.py -d example.com --module emails
-python main.py -d example.com --module subdomains
-python main.py -d example.com --module social
+python finder.py -d example.com --module emails
+python finder.py -d example.com --module subdomains
+python finder.py -d example.com --module social
 
 # Use a proxy (Burp Suite, SOCKS5 …)
-python main.py -d example.com --proxy http://127.0.0.1:8080
+python finder.py -d example.com --proxy http://127.0.0.1:8080
 
 # Skip social discovery (faster)
-python main.py -d example.com --skip-social
+python finder.py -d example.com --skip-social
 
 # Custom output directory and timeout
-python main.py -d example.com --output ./reports --timeout 20
+python finder.py -d example.com --output ./reports --timeout 20
 
 # Do not save results to disk
-python main.py -d example.com --no-save
+python finder.py -d example.com --no-save
 ```
 
 ### All options
@@ -105,7 +106,7 @@ results/
 
 ```
 osint_tool/
-├── main.py            # CLI entry point & orchestrator
+├── finder.py            # CLI entry point & orchestrator
 ├── email_finder.py    # Email discovery module
 ├── subdomain_enum.py  # Subdomain enumeration module
 ├── social_finder.py   # Social media discovery module
