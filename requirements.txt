@@ -1,0 +1,4 @@
+# OSINT Reconnaissance Tool – Python dependencies
+requests>=2.31.0
+beautifulsoup4>=4.12.0
+urllib3>=2.0.0
